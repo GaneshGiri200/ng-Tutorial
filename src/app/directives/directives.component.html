@@ -1,0 +1,57 @@
+<h3>Type of Directives</h3>
+
+<h4>1.Component Directives</h4>
+<hr>
+<h4>2.Structural Directives</h4>
+
+<button (click)=switchIf()>Switch confition</button>
+
+<br>
+<p *ngIf = "isCondition"> i) This is example of *ngIf</p>
+<br>
+
+<hr>
+<p>is is example of ngIf if else</p>
+<div *ngIf="isCondition;then thenpart;else elsepart"></div>
+
+<ng-template #thenpart>
+	<p>this is then part</p>
+	<strong>ng-template output on condition True</strong>
+</ng-template>
+
+<ng-template #elsepart>
+	<p>this is else part</p>
+	<strong>ng-template output on condition False</strong>
+</ng-template>
+<br><br>
+
+<hr>
+<p>is is example of *ngFor</p>
+<ul *ngFor = "let dev of developer">
+	<li>{{dev}}</li>
+</ul>
+
+<p [hidden]="!isCondition">ii) This is example of hidden Property Binding 1</p>
+<p [hidden]="isCondition">ii) This is example of hidden Property Binding 2</p>
+
+<hr>
+<p>is is example of *ngSwitch</p>
+
+<div [ngSwitch] = "selDev">
+	<div *ngSwitchCase = "'MEAN Stack'">Ganesh is MEAN Stack Developer</div>
+	<div *ngSwitchCase = "'MERN stack'">Ganesh is MERN stack Developer</div>
+	<div *ngSwitchCase = "'PHP'">Ganesh is PHP Developer</div>
+	<div *ngSwitchCase = "'Front-end'">Ganesh is Front-end Developer</div>
+	<div *ngSwitchCase = "'Back-end'">Ganesh is Back-end Developer</div>
+	<div *ngSwitchDefault>Ganesh is software Developer</div>
+</div>
+<hr>
+<h4>3.Attribute Directives</h4>
+
+<h2 [ngStyle]="myCss">ngStyle Example</h2>
+
+<h2 [ngClass]="myCssClass">ngClass Example</h2>
+
+<h4>4.Custom Directives</h4>
+
+

@@ -1,0 +1,12 @@
+<p>parent</p>
+<h3>Child Data: {{childData}}</h3>
+<label for="parnetData"></label>
+<input type="text" id="parnetData" placeholder="Enter the Data" #refData> &nbsp;
+<button class="btn-sm btn-primary" (click)=getData(refData.value)>Send</button>
+
+<hr size="5px">
+<app-child (eventData)="childData=$event" [parentData]="myData"></app-child> <!-- //we can give any name to parentData but not to eventData  -->
+
+<hr>
+<button type="button" class="btn btn-primary" (click)="incrementMyValue()">inc</button>
+<h4>{{message}}i</h4>

@@ -1,0 +1,26 @@
+<!-- (ngSubmit)="addData(frefData.value)" -->
+<form #frefData="ngForm" (ngSubmit)="addData(frefData.value)">
+	<div class="form-group">
+		<label>Enter Your Full Name: </label>
+		<input type="text" name="name"  class="form-control" placeholder="Enter Your Full Name" [ngModel]=empObj?.name> <!-- here ? used to resolve error in console it is optional  -->
+	</div>	
+	<div class="form-group">
+		<label>Enter your Post: </label>
+		<input type="text" name="post" class="form-control" placeholder="Enter Your Post" [ngModel]="empObj?.post">
+	</div>
+	<div class="form-group">
+		<label>Enter Your Gender: &nbsp; </label>
+		<label class="form-check-label">
+			<input type="radio" name="gender" class="form-check-input" [ngModel]="empObj?.gender" value="male"> Male
+			<input type="radio" name="gender" class="form-check-input" [ngModel]="empObj?.gender" value="female"> Female
+		</label>
+	</div>
+	<div class="form-group">
+		<label>Enter Your Salary:</label>
+		<input type="number" name="salary" class="form-control" placeholder="Enter Your Salary" [ngModel]="empObj?.salary">
+	</div>
+
+	<div class="btun">
+		<button type="submit" class="btn-sm btn-primary">Submit</button>
+	</div>
+</form>

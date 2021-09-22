@@ -1,0 +1,100 @@
+{
+  "employee": [
+    {
+      "id": 101,
+      "name": "Akashay",
+      "post": "FullStack Developer",
+      "gender": "male",
+      "salary": 70000
+    },
+    {
+      "id": 102,
+      "name": "Ganesh",
+      "post": "MEANStack Developer",
+      "gender": "male",
+      "salary": 75000
+    },
+    {
+      "id": 104,
+      "name": "Aishwarya",
+      "post": "System Engineer",
+      "gender": "female",
+      "salary": 40000
+    },
+    {
+      "name": "Suresh",
+      "post": "Linux Administrator",
+      "gender": "male",
+      "salary": 60000,
+      "id": 105
+    },
+    {
+      "name": "Manish",
+      "post": "System Engineer",
+      "gender": "male",
+      "salary": 30000,
+      "id": 106
+    },
+    {
+      "name": "Vandana",
+      "post": "Angular developer",
+      "gender": "female",
+      "salary": 50000,
+      "id": 107
+    },
+    {
+      "name": "Prachi ",
+      "post": "Angular developer",
+      "gender": "female",
+      "salary": 60000,
+      "id": 108
+    },
+    {
+      "name": "vishal",
+      "post": "Java Developer",
+      "gender": "male",
+      "salary": 75000,
+      "id": 109
+    },
+    {
+      "name": "Yogesh",
+      "post": "App Developer",
+      "gender": "male",
+      "salary": 50000,
+      "id": 110
+    },
+    {
+      "name": "Vaishnavi",
+      "post": "Html Developer",
+      "gender": "female",
+      "salary": 20000,
+      "id": 111
+    },
+    {
+      "name": "Manisha",
+      "post": "React Developer",
+      "gender": "female",
+      "salary": 40000,
+      "id": 112
+    },
+    {
+      "name": "Ranjeet",
+      "post": "Angular developer",
+      "gender": "male",
+      "salary": 60000,
+      "id": 113
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "user": "admin",
+      "password": "admin@123"
+    },
+    {
+      "id": 2,
+      "user": "hero",
+      "password": "hero@123"
+    }
+  ]
+}

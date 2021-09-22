@@ -1,0 +1,30 @@
+<h2> This is Databinding Example</h2>
+<!-- Interpolation Example  -->
+<h3>Types of Data Binding</h3>
+<h4>1.Interpolation: {{heading1}}</h4>
+ 
+<!-- Property Binding -->
+<h4>2.Property Binding:</h4>
+
+<img [src]="image" [alt]="altimag" id="im1">
+
+<h4>3.Event Binding</h4>
+<button (click)="changeSize()">Click</button>
+
+
+<!-- Two way databinding -->
+<h4>4.Two Way databinding</h4>
+
+<input type="text" name="userdata" [(ngModel)]="userdata"> 
+<h2>{{userdata}}</h2>
+
+<h3>Reference Variable</h3>
+<!-- Reference variable -->
+<form>
+	<label for="item">Enter Value:</label>
+
+	<!-- created reference variable usng # symbol-->
+	<input type="text" name="item" id="item" #refname>
+	<br>
+	<button type="button" (click)="sendData(refname.value)">Send value in alert</button>
+</form>

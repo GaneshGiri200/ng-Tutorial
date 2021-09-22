@@ -1,0 +1,9 @@
+<p>child</p>
+
+<h3>Parent Data: {{parentData}}</h3>
+
+<input type="text" placeholder="Enter the data" #refData> &nbsp;
+<button class="btn-sm btn-success" (click)=getData(refData.value)> Send</button>
+
+<button type="button" class="btn btn-primary" (click)="increment1()">inc</button>
+<h4>{{counterMsg}}i</h4>

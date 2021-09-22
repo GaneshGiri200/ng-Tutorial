@@ -1,0 +1,26 @@
+<h2> Service Data</h2>
+
+<div class="table-responsive">
+	<table class="table table-primary table-sm table-hover">
+	<thead>
+		<td>Emp Id</td>
+		<td (click)="nameOrder()">Name <span>({{orderName}})</span></td>
+		<td>Contact</td>
+		<td>Gender</td>
+		<td (click)="addressOrder()">Address <span>({{orderAddress}})</span></td>
+		<td>Salary</td>
+		<td (click)="postOrder()">Post <span>({{orderPost}})</span></td>
+	</thead>
+	<tbody>
+		<tr *ngFor ="let emp of empArray | orderBy: order:reverse">
+			<td>{{emp.id}}</td>
+			<td>{{emp.name}}</td>
+			<td>{{emp.contact}}</td>
+			<td>{{emp.gender}}</td>
+			<td>{{emp.address}}</td>
+			<td>{{emp.salary}}</td>
+			<td>{{emp.post}}</td>
+		</tr>
+	</tbody>
+</table>
+</div>

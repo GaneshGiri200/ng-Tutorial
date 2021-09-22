@@ -1,0 +1,87 @@
+<form #utfref = "ngForm" (ngSubmit)=getData(utfref.value)>
+	
+	<div>
+		<label>Enter Name:</label>
+		<input type="text" name="name" #refname="ngModel" ngModel required class="form-control" [pattern]="namePattern">
+		<!-- {{refname.className}} -->
+		<div class="alert alert-danger" *ngIf=" refname.invalid && refname.touched">
+			<div *ngIf="refname.hasError('required')">
+			This field is required.
+			</div>
+			<div *ngIf="refname.hasError('pattern')">
+			Full name must contain only character with minimum 2 and max 30
+			</div>
+		</div>
+	</div>
+<br>
+<div>
+		<label>Enter Your Password:</label>
+		<input type="password" name="password" #refPass="ngModel" ngModel required class="form-control" [pattern]="passwordPattern">
+		<!-- {{refPass.className}} -->
+		<div class="alert alert-danger" *ngIf=" refPass.invalid && refPass.touched">
+			<div *ngIf="refPass.hasError('required')">
+			This field is required.
+			</div>
+			<div *ngIf="refPass.hasError('pattern')">
+			password must contains min 8 character, 1 capital, 1 small alphabet and 1 special character
+			</div>
+		</div>
+	</div>
+<br>
+	<div>
+		<label>Enter contact:</label>
+		<input type="text" name="contact" #refcontact="ngModel" ngModel required class="form-control" [pattern]="contactPattern">
+		<!-- {{refcontact.className}} -->
+		<div class="alert alert-danger" *ngIf="refcontact.invalid && refcontact.touched">
+			<div *ngIf="refcontact.hasError('required')">
+			This field is required.
+			</div>
+			<div *ngIf="refcontact.hasError('pattern')">
+			contact should contain min 10 numbers
+			</div>
+		</div>
+	</div>
+<br>
+	<div>
+		<label>Enter email:</label>
+		<input type="text" name="email" #refemail="ngModel" ngModel required class="form-control" [pattern]="emailPattern">
+		<!-- {{refemail.className}} -->
+		<div class="alert alert-danger" *ngIf="refemail.invalid && refemail.touched">
+			<div *ngIf="refemail.hasError('required')">  
+			This field is required.
+			</div>
+			<div *ngIf="refemail.hasError('pattern')">
+			Email id should be in proper formate
+			</div>
+		</div>
+	</div>
+<br>
+	<div class="form-group">
+		<label>Select Course:</label>
+		<select name="courses" class="form-control" #refCourse="ngModel" ngModel required>
+			<option value="">Select Course</option>
+			<option [value]="course" *ngFor="let course of myCourses">{{course}}</option>
+		</select>
+		<div class="alert alert-danger" *ngIf="refCourse.invalid && refCourse.touched">
+			<div *ngIf="refCourse.hasError('required')">
+			This field is required.
+			</div>
+		</div>
+	</div>
+<br>
+	<div>
+		<div class="form-check form-group">
+			<label for="" class="form-check-label">
+				<input type="checkbox" name="term" class="form-check-input" value="true" #refTerm="ngModel" ngModel required>
+				I am Agree to your term and condition.
+			</label>
+			<div class="alert alert-danger" *ngIf="refTerm.invalid && refTerm.touched">
+			<div *ngIf="refTerm.hasError('required')">
+			This field is required.
+			</div>
+		</div>
+		</div>
+	</div>
+<br>
+	<button class="btn btn-primary" [disabled]="utfref.invalid">Submit</button>
+</form>

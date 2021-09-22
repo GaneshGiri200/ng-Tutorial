@@ -1,0 +1,71 @@
+<h2>Database</h2>
+
+
+<div class="row mt-3 mb-4">
+	<div class="col-sm-6">
+		<button type="button" class="btn-sm btn-outline-primary" routerLink="add"><i class="fa fa-plus" aria-hidden="true"></i> Add</button>
+	</div>
+	<div class="col-sm-6">
+		<input type="text" name="search" placeholder="Search here..." [(ngModel)]="searchKey">
+	</div>
+</div>
+
+<div class="tale-responsive">
+	<table class="table table-sm table-primary table-hover">
+		<thead>
+			<th>Id</th>
+			<th (click)="changeOrder()">Name</th>
+			<th>Post</th>
+			<th>Gender</th>
+			<th>Salary</th>
+			<th>Action</th>
+		</thead>
+		<tbody>
+			<tr *ngFor="let emp of empData |filter:searchKey  | paginate: {itemsPerPage: 7, currentPage: p } | orderBy: order:reverse">
+				<td>{{emp.id}}</td>
+				<td>{{emp.name}}</td>
+				<td>{{emp.post}}</td>
+				<td>{{emp.gender}}</td>
+				<td>{{emp.salary | currency:'INR'}}</td>
+				<td>
+					<button type="button" class="btn-sm btn-outline-secondary" (click)="openModal(template)" ><i class="fa fa-eye" aria-hidden="true"></i></button> |
+					<button type="button" class="btn-sm btn-outline-success" [routerLink]="['edit',emp.id]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button> |
+					<button type="button" class="btn-sm btn-outline-danger" (click)="deleteData(emp.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+				</td>
+
+				<ng-template #template>
+				  <div class="modal-header">
+				    <h4 class="modal-title pull-left">{{emp.name}}</h4>
+				    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+				      <span aria-hidden="true">&times;</span>
+				    </button>
+				  </div>
+				  <div class="modal-body">
+				    <table class="table">
+				    	<tr>
+				    		<td>Id</td>
+				    		<td>{{emp.id}}</td>
+				    	</tr>
+				    	<tr>
+				    		<td>Post</td>
+				    		<td>{{emp.post}}</td>
+				    	</tr>
+				    	<tr>
+				    		<td>Gender</td>
+				    		<td>{{emp.gender}}</td>
+				    	</tr>
+				    	<tr>
+				    		<td>Salary</td>
+				    		<td>{{emp.salary}}</td>
+				    	</tr>
+				    </table>
+				  </div>
+				</ng-template>
+			</tr>
+		</tbody>
+	</table>
+	<div class="pagination">
+		<pagination-controls class="control" (pageChange)="p = $event"></pagination-controls>
+	</div>
+	<strong>{{dbError}}</strong>
+</div>

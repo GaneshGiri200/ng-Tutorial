@@ -1,0 +1,60 @@
+<h3>{{greeting}}</h3>
+<hr>
+<h4>1.Inbuild Pipes</h4>
+<!-- <h4>{{greeting| uppercase}}</h4> -->
+<h5>i) uppercase: {{greeting | uppercase}}</h5>
+<h5>i) uppercase for string: {{"string Passed" | uppercase}}</h5>
+<h5>ii) lowercase: {{greeting | lowercase}}</h5>
+<h5>iii) titlercase: {{greeting | titlecase}}</h5> <!-- without parameter -->
+<h5>iv) slice by 10: {{greeting | slice:10}}</h5> <!-- with parameter -->
+<h5>v) slice from 10 to 15: {{greeting | slice:10:15}}</h5> <!-- with parameter -->
+
+<h5>vi) json pipe: {{emp | json }}</h5>
+<h5>vii) number pipe: {{8.6759 | number:'3.3-7' }}</h5>
+<h5>vii) number pipe: {{8.675943764 | number:'3.3-5' }}</h5>
+<h5>vii) number pipe: {{8.6759 | number:'3.5-7' }}</h5>
+<h5>vii) number pipe: {{8.6759| number:'3.1-2' }}</h5>
+<h5>vii) number pipe: {{8.6749| number:'3.1-2' }}</h5>
+
+<h5>viii) currency pipe: {{100| currency }}</h5>
+<h5>viii) currency pipe pound: {{100| currency:'GBP' }}</h5>
+<h5>viii) currency pipe rupees: {{100| currency:'INR' }}</h5>
+
+<h5>(Example date): {{date}}</h5>
+<h5>ix) short date pipe: {{date | date:'shortDate'}}</h5>
+<h5>ix) long date pipe: {{date | date:'longDate'}}</h5>
+<h5>ix) medium date pipe: {{date | date:'mediumDate'}}</h5>
+
+<hr>
+
+<h4>2.Custom Pipes</h4>
+<h5>square of 8 is: {{8 | square}}</h5>
+
+<div class="table-responsive">
+	<table class="table table-primary  table-hover">
+	<thead>
+		<td>Id</td>
+		<td>Name</td>
+		<td>Mobile</td>
+		<td>Gender</td>
+		<td>Adrress</td>
+		<td>Post</td>
+	</thead>
+	<tbody>
+		<tr *ngFor = "let student of students">
+			<td (click)=getId(student.id)>{{student.id}}</td>
+			<td (click)=getId(student.name)>{{student.name | checkGender: student.gender}}</td>
+			<td (click)=getId(student.contact)>{{student.contact}}</td>
+			<td (click)=getId(student.gender)>{{student.gender}}</td>
+			<td (click)=getId(student.address)>{{student.address}}</td>
+			<td (click)=getId(student.post)>{{student.post}}</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+
+
+
+
+

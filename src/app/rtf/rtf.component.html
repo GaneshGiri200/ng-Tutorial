@@ -1,0 +1,31 @@
+<form [formGroup]="emp">
+	<div class="form-group">
+		<label>Enter Your Name:</label>
+		<input type="text" name="ename" class="form-control"formControlName="empName">
+		<div class="alert alert-danger" *ngIf="emp.get('empName').invalid && emp.get('empName').touched">
+			<div *ngIf="emp.get('empName').errors.required">
+				this field is required
+			</div>
+			<div *ngIf="emp.get('empName').errors.pattern">
+				name should containr min 4 and max 30 only
+			</div>
+		</div>
+	</div>
+	<br>
+
+	<div class="form-group">
+		<label>Enter Your Password:</label>
+		<input type="text" name="ename" class="form-control"formControlName="empPassword">
+		<div class="alert alert-danger" *ngIf="emp.get('empPassword').invalid && emp.get('empPassword').touched">
+			<div *ngIf="emp.get('empPassword').errors.required">
+				this field is required
+			</div>
+			<div *ngIf="emp.get('empPassword').errors.pattern">
+				Password must be in good formate
+			</div>
+		</div>
+	</div>
+	<br>
+
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,12 @@
+table {
+	thead {
+		background-color: skyblue;
+	}
+	td:hover {
+		background-color: tomato;
+	}
+	td {
+		text-align: center;
+		border: 2px solid gray;
+	}
+}

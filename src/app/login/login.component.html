@@ -1,0 +1,13 @@
+<div class="login-box">
+	<table>
+		<tr>
+			<td><label>Username: </label></td>
+			<td><input type="text" name="user" [(ngModel)]="uId"></td>
+		</tr>
+		<tr>
+			<td><label>Password: </label></td>
+			<td><input type="password" name="Password" [(ngModel)]="uPass"></td>
+		</tr>
+	</table>
+	<button type="button" class="btn-sm btn-outline-success" (click)="getData()">Submit</button>
+</div>
